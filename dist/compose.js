@@ -190,13 +190,13 @@ function compose(dataLoader) {
             return loadingHandler();
           }
 
-          var finalProps = (0, _extends3.default)({}, props, data);
-
           var setChildRef = function setChildRef(c) {
             _this3.child = c;
           };
 
-          return _react2.default.createElement(Child, (0, _extends3.default)({ ref: setChildRef }, finalProps));
+          var finalProps = (0, _extends3.default)({}, props, data, !(Child instanceof Function) && { ref: setChildRef });
+
+          return _react2.default.createElement(Child, finalProps);
         }
       }]);
       return Container;
