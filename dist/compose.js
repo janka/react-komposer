@@ -162,7 +162,7 @@ function compose(dataLoader) {
 
           // We need to do this before subscribing again.
           this._unsubscribe();
-          this._stop = dataLoader(props, onData, env);
+          this._stop = dataLoader(props, onData, env, this);
         }
       }, {
         key: '_unsubscribe',
